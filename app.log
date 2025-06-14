@@ -1,0 +1,22 @@
+2025-06-14 03:16:26,271 - __main__ - INFO - Initializing Image Search Engine...
+2025-06-14 03:16:26,324 - __main__ - INFO - ✅ Loaded VGG16 with 1000 features
+2025-06-14 03:16:26,360 - __main__ - INFO - ✅ Loaded ResNet50 with 1000 features
+2025-06-14 03:16:26,433 - __main__ - INFO - ✅ Loaded MobileNet with 1000 features
+2025-06-14 03:16:26,443 - __main__ - INFO - ✅ Found 1000 images in image.orig
+2025-06-14 03:16:26,444 - __main__ - INFO - Search engine initialization complete!
+2025-06-14 03:16:26,458 - __main__ - INFO - Multimedia Search Application initialized successfully!
+2025-06-14 03:16:26,459 - __main__ - INFO - 🚀 Starting Enhanced Multimedia Search Engine...
+2025-06-14 03:16:26,459 - __main__ - INFO - 📊 Available models: ['VGG16', 'ResNet50', 'MobileNet']
+2025-06-14 03:16:26,459 - __main__ - INFO - 📊 Model count: 3
+2025-06-14 03:16:26,459 - __main__ - INFO - 🖼️  Total images: 1000
+2025-06-14 03:16:26,459 - __main__ - INFO - 🌐 Access the application at: http://0.0.0.0:5000
+2025-06-14 03:16:26,460 - __main__ - INFO - ✨ Enhanced features: Security, Caching, Analytics, Performance Optimization
+2025-06-14 03:16:41,099 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:16:41] "[32mGET / HTTP/1.1[0m" 302 -
+2025-06-14 03:16:41,156 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:16:41] "GET /login HTTP/1.1" 200 -
+2025-06-14 03:16:48,103 - __main__ - INFO - Successful login for user: demo
+2025-06-14 03:16:48,105 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:16:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-06-14 03:16:48,125 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:16:48] "GET / HTTP/1.1" 200 -
+2025-06-14 03:16:56,113 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:16:56] "GET / HTTP/1.1" 200 -
+2025-06-14 03:24:33,231 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:24:33] "GET /login HTTP/1.1" 200 -
+2025-06-14 03:24:36,550 - werkzeug - INFO - 127.0.0.1 - - [14/Jun/2025 03:24:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-14 03:27:20,341 - __main__ - INFO - Application shutdown complete

@@ -1,0 +1,307 @@
+{
+  "query_image": "1749833584_download.jpeg",
+  "model_used": "ResNet50",
+  "similarity_metric": "euclidean",
+  "top_k": 20,
+  "total_database_images": 1000,
+  "similar_images": [
+    {
+      "name": "352.jpg",
+      "similarity": 0.08518608659505844,
+      "distance": 10.739006042480469,
+      "rank": 1,
+      "similarity_percentage": 8.52
+    },
+    {
+      "name": "472.jpg",
+      "similarity": 0.08513683825731277,
+      "distance": 10.745797157287598,
+      "rank": 2,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "454.jpg",
+      "similarity": 0.08513067662715912,
+      "distance": 10.746646881103516,
+      "rank": 3,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "468.jpg",
+      "similarity": 0.08510290831327438,
+      "distance": 10.750479698181152,
+      "rank": 4,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "475.jpg",
+      "similarity": 0.08510155975818634,
+      "distance": 10.750665664672852,
+      "rank": 5,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "457.jpg",
+      "similarity": 0.08510091155767441,
+      "distance": 10.750755310058594,
+      "rank": 6,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "436.jpg",
+      "similarity": 0.08509822934865952,
+      "distance": 10.751126289367676,
+      "rank": 7,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "253.jpg",
+      "similarity": 0.08509796112775803,
+      "distance": 10.7511625289917,
+      "rank": 8,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "466.jpg",
+      "similarity": 0.08509783446788788,
+      "distance": 10.751180648803711,
+      "rank": 9,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "445.jpg",
+      "similarity": 0.08508411049842834,
+      "distance": 10.75307559967041,
+      "rank": 10,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "485.jpg",
+      "similarity": 0.08508385717868805,
+      "distance": 10.753110885620117,
+      "rank": 11,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "986.jpg",
+      "similarity": 0.08508247882127762,
+      "distance": 10.753301620483398,
+      "rank": 12,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "231.jpg",
+      "similarity": 0.08507801592350006,
+      "distance": 10.753917694091797,
+      "rank": 13,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "960.jpg",
+      "similarity": 0.08507736027240753,
+      "distance": 10.754008293151855,
+      "rank": 14,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "263.jpg",
+      "similarity": 0.08507688343524933,
+      "distance": 10.754074096679688,
+      "rank": 15,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "459.jpg",
+      "similarity": 0.08507661521434784,
+      "distance": 10.754111289978027,
+      "rank": 16,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "486.jpg",
+      "similarity": 0.08507486432790756,
+      "distance": 10.754353523254395,
+      "rank": 17,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "455.jpg",
+      "similarity": 0.08507378399372101,
+      "distance": 10.754502296447754,
+      "rank": 18,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "451.jpg",
+      "similarity": 0.08507244288921356,
+      "distance": 10.754687309265137,
+      "rank": 19,
+      "similarity_percentage": 8.51
+    },
+    {
+      "name": "470.jpg",
+      "similarity": 0.08507171273231506,
+      "distance": 10.754788398742676,
+      "rank": 20,
+      "similarity_percentage": 8.51
+    }
+  ],
+  "metrics": [
+    {
+      "position": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "352.jpg"
+    },
+    {
+      "position": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "472.jpg"
+    },
+    {
+      "position": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "454.jpg"
+    },
+    {
+      "position": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "468.jpg"
+    },
+    {
+      "position": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "475.jpg"
+    },
+    {
+      "position": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "457.jpg"
+    },
+    {
+      "position": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "436.jpg"
+    },
+    {
+      "position": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "253.jpg"
+    },
+    {
+      "position": 9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "466.jpg"
+    },
+    {
+      "position": 10,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "445.jpg"
+    },
+    {
+      "position": 11,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "485.jpg"
+    },
+    {
+      "position": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "986.jpg"
+    },
+    {
+      "position": 13,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "231.jpg"
+    },
+    {
+      "position": 14,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "960.jpg"
+    },
+    {
+      "position": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "263.jpg"
+    },
+    {
+      "position": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "459.jpg"
+    },
+    {
+      "position": 17,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "486.jpg"
+    },
+    {
+      "position": 18,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "455.jpg"
+    },
+    {
+      "position": 19,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "451.jpg"
+    },
+    {
+      "position": 20,
+      "precision": 0.0,
+      "recall": 0.0,
+      "relevant": false,
+      "image_name": "470.jpg"
+    }
+  ],
+  "summary": {
+    "total_relevant": 0,
+    "final_precision": 0.0,
+    "final_recall": 0.0,
+    "best_similarity": 8.52,
+    "worst_similarity": 8.51,
+    "average_similarity": "8.51"
+  },
+  "query_image_url": "/uploads/1749833584_download.jpeg",
+  "search_time": 1.516,
+  "timestamp": "1749833584",
+  "performance": {
+    "extraction_time": 0.455,
+    "comparison_time": 1.061,
+    "total_comparisons": 1000
+  }
+}

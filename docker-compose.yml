@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # Redis for authentication
+  redis:
+    image: redis:7-alpine
+    container_name: multimedia_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - multimedia_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Main Flask application
+  multimedia_app:
+    build: .
+    container_name: multimedia_search_engine
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - multimedia_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: multimedia_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      multimedia_app:
+        condition: service_healthy
+    networks:
+      - multimedia_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  multimedia_network:
+    driver: bridge

@@ -1,0 +1,11 @@
+{
+  "error": "Aucune image similaire trouvée",
+  "query_image_url": "/uploads/1749833577_download.jpeg",
+  "search_time": 2.131,
+  "timestamp": "1749833577",
+  "performance": {
+    "extraction_time": 0.639,
+    "comparison_time": 1.492,
+    "total_comparisons": 1000
+  }
+}
