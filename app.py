@@ -10,6 +10,8 @@ from datetime import datetime
 from functools import wraps
 import redis
 import os
+import hashlib
+import secrets
 REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
 REDIS_PORT = int(os.getenv('REDIS_PORT', 6379))
 REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', None)
@@ -2065,16 +2067,31 @@ def login():
         username = request.form.get('username', '').strip()
         password = request.form.get('password', '')
         
-        # Get users from Redis or fallback
-        users = get_users()
-        
-        if username in users and users[username] == password:
+        # Check Redis users first (with hashed password verification)
+        if verify_redis_password(username, password):
             session['username'] = username
             session.permanent = True
             app.permanent_session_lifetime = 1800  # 30 minutes
             return redirect(url_for('index'))
-        else:
-            return render_template_string(get_login_template(), error="Invalid username or password. Please try again.")
+        
+        # Fallback to get_users() for compatibility (handles auto-migration)
+        users = get_users()
+        if username in users:
+            stored_value = users[username]
+            # Handle both hashed and plain text passwords
+            if isinstance(stored_value, bytes):
+                stored_value = stored_value.decode('utf-8')
+            
+            # Check if it's plain text (for fallback compatibility)
+            if ':' not in stored_value and stored_value == password:
+                # Plain text match - migrate to hashed
+                add_user_to_redis(username, password)
+                session['username'] = username
+                session.permanent = True
+                app.permanent_session_lifetime = 1800  # 30 minutes
+                return redirect(url_for('index'))
+        
+        return render_template_string(get_login_template(), error="Invalid username or password. Please try again.")
     
     # If user is already logged in, redirect to main page
     if 'username' in session:
@@ -2083,14 +2100,43 @@ def login():
     return render_template_string(get_login_template())
 
 def add_user_to_redis(username, password):
-    """Add a user to Redis"""
+    """Add a user to Redis with hashed password"""
     if redis_client:
         try:
-            redis_client.hset("users", username, password)
-            print(f"✅ User {username} added to Redis")
+            # Generate a random salt
+            salt = secrets.token_hex(8)
+            
+            # Hash password with salt
+            password_with_salt = password + salt
+            hashed_password = hashlib.sha256(password_with_salt.encode()).hexdigest()
+            
+            # Store hash:salt format
+            stored_value = f"{hashed_password}:{salt}"
+            redis_client.hset("users", username, stored_value)
+            print(f"✅ User {username} added to Redis with hashed password")
             return True
         except Exception as e:
             print(f"❌ Error adding user: {e}")
+    return False
+
+def verify_redis_password(username, password):
+    """Verify password against Redis stored hash"""
+    if redis_client:
+        try:
+            stored_value = redis_client.hget("users", username)
+            if stored_value:
+                # Handle both bytes and string
+                stored_value = stored_value.decode('utf-8') if isinstance(stored_value, bytes) else stored_value
+                
+                # Check if it's a hashed password (contains :)
+                if ':' in stored_value:
+                    stored_hash, salt = stored_value.split(':')
+                    # Hash the provided password with the stored salt
+                    password_with_salt = password + salt
+                    password_hash = hashlib.sha256(password_with_salt.encode()).hexdigest()
+                    return password_hash == stored_hash
+        except Exception as e:
+            print(f"❌ Error verifying password: {e}")
     return False
 
 # Optional: Add a simple API endpoint to add users

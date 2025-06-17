@@ -57,7 +57,11 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
-
+volumes:
+  redis_data:
+  models_cache:
+  nginx_cache:
+  
 networks:
   multimedia_network:
     driver: bridge
